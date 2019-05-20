@@ -1,18 +1,6 @@
 const curso1 = require ('./modelo');
 const fs = require ('fs');
 
-//destructuracion del codigo
-const {cursos, listarCursos, buscarCurso, crearArchivo} = require ('./modelo');
-
-let {id, nombre, duracion, valor} = cursos;
-
-listarCursos();
-
-//console.log(buscarCurso());
-//console.log(buscarCurso(1));
-
-//crearArchivo(cursos, )
-
 const opciones = {
 	idcur:{
 		demand: true,
@@ -28,10 +16,19 @@ const opciones = {
 	}
 }
 
-
 const arg = require('yargs')
-			.command('inscribirse', 'inscribirse a un curso', opciones)
+			.command('inscribir', 'inscribirse a un curso', opciones)
 			.arg
 
 console.log(arg);
-//crearArchivo(cursos, arg.n, arg.c, arg.id);
+//destructuracion del codigo
+const {cursos, listarCursos, buscarCurso, crearArchivo} = require ('./modelo');
+
+let {id, nombre, duracion, valor} = cursos;
+
+listarCursos();
+
+console.log(buscarCurso(1));
+
+
+crearArchivo("camilo", 1035225341, 2);
